@@ -31,7 +31,7 @@ def delete(idTarefa):
 def update(idTarefa):
     
     if request.method == 'POST':
-        tarefas = Tarefa.obter_tarefas
+        tarefa = Tarefa.obter_tarefas
         titulo = request.form['titulo-tarefa']
         data = request.form['data-conclusao']
         tarefa = Tarefa(titulo, data, idTarefa)
