@@ -3,9 +3,6 @@ import traceback
 from types import TracebackType
 from typing import Any, Optional, Self, Type
 
-
-from click import Option
-
 class Database:
     def __init__(self, db_name: str) -> None:
         self.connection: Connection = connect(db_name)
