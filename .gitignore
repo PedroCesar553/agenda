@@ -4,3 +4,12 @@
 # Arquivos compilados do Python
 __pycache__/
 *.pyc
+
+# Banco de dados SQLite
+data/
+*.db
+*.SQLite
+*.sqlite3
+
+# Variaveis de ambiente
+.env
