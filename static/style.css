@@ -56,10 +56,23 @@ input {
     margin-bottom: 12px;
 }
 
+input::placeholder {
+    color: #9ca3af;
+}
+
+/* FOCO */
 input:focus {
     outline: none;
     border-color: #60a5fa;
 }
+
+/* ===== CORREÇÃO DO ÍCONE DO CALENDÁRIO ===== */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(1.2);
+    cursor: pointer;
+    opacity: 0.9;
+}
+/* ========================================= */
 
 /* TEXTO DE AJUDA */
 .form-text {
@@ -109,7 +122,7 @@ ul {
     list-style: none;
 }
 
-/* ITEM DA TAREFA (AGORA VISÍVEL) */
+/* ITEM DA TAREFA */
 li {
     background: #111827;
     border: 1px solid #1f2933;
