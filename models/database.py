@@ -1,7 +1,8 @@
 from sqlite3 import Connection, connect, Cursor
-from typing import Any
+from typing import Any, Type, Self, Optional
 from dotenv import load_dotenv
 import traceback
+from types import TracebackType
 import os
 
 load_dotenv()
