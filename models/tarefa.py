@@ -21,7 +21,7 @@ class Tarefa:
         self.id_tarefa: Optional[int] = id_tarefa
 
     @classmethod
-    def id(cls, id: int) -> Self:
+    def id(cls, id_procurado):
         with Database() as db:
             query: str = (
                 "SELECT titulo_tarefa, data_conclusao FROM tarefas WHERE id = ?;"
@@ -42,7 +42,13 @@ class Tarefa:
             db.executar(query, params)
 
     @classmethod
-    def obter_tarefas(cls) -> list[Self]:
+    def obter_tarefas(cls):
+        with Database() as db:
+            query = 'SELECT titulo_tarefa, data_conclusao, id, concluida, data_hora_conclusao FROM tarefas;'
+            resultados = db.buscar_tudo(query)
+            return [cls(t, d, i, c, dh) for t, d, i, c, dh in resultados]
+
+    def salvar_tarefa(self):
         with Database() as db:
             query: str = "SELECT titulo_tarefa, data_conclusao, id FROM tarefas;"
             resultados: list[Any] = db.buscar_tudo(query)

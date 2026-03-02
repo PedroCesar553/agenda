@@ -166,3 +166,25 @@ p {
     text-align: center;
     color: #9ca3af;
 }
+
+
+/* RNF01: Estilo para tarefa concluída */
+li.concluida {
+    background: #064e3b; /* Verde escuro para indicar conclusão */
+    border-left: 5px solid #10b981; /* Barra lateral verde brilhante */
+    opacity: 0.8;
+}
+
+li.concluida span {
+    text-decoration: line-through; /* Risca o texto */
+    color: #9ca3af; /* Cor de texto mais apagada */
+}
+
+/* RNF03: Cores dos botões de status */
+.btn-status.concluir {
+    background: #059669; /* Verde para concluir */
+}
+
+.btn-status.reabrir {
+    background: #dc2626; /* Vermelho para reabrir */
+}

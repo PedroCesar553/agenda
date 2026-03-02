@@ -1,6 +1,5 @@
 from sqlite3 import Connection, connect, Cursor
-from types import TracebackType
-from typing import Any, Optional, Self, Type
+from typing import Any
 from dotenv import load_dotenv
 import traceback
 import os
@@ -21,7 +20,9 @@ def init_db(db_name: str = DB_PATH) -> None:
         CREATE TABLE IF NOT EXISTS tarefas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             titulo_tarefa TEXT NOT NULL,
-            data_conclusao TEXT     
+            data_conclusao TEXT,
+            concluida INTEGER DEFAULT 0,
+            data_hora_conclusao TEXT
         );
         """)
 
@@ -65,5 +66,4 @@ class Database:
             print(f"Mensagem: {exc_value}")
             print("Traceback completo:")
             traceback.print_tb(tb)
-
         self.close()
